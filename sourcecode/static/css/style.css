@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/* Homepage Splash Screen */
+
+.img_container{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/home_banner.png);
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+}
+	
+/* ----------- */
+
+/* Page Banners */
+
+.img_cont{
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 400px;
+}
+
+.bg_img{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/recipe.png);
+}
+
+.bg_img1{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/halloween.png);
+}
+
+.bg_img2{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/bonfire.png);
+}
+
+.bg_img3{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/christmas.png);
+}
+
+.bg_img4{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/pumpkin_pie.png);
+}
+
+h1.banner, h2.banner, p.lead {
+	text-align: center;
+	color: #FFFFFF;
+}
+	
+h1.banner {
+	padding-top: 10%;
+}
+	
+h2.banner {
+	padding-top: 5%;
+}
+	
+/* ----------- */
+
+/* Individual Recipe Pages  */
+
+pre{
+	white-space: pre-wrap; 
+	word-break: normal;
+	background-color: #ffffff;
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+}
+
+/* ----------- */
+
+
+
