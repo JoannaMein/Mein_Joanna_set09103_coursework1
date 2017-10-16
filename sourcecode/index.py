@@ -4,6 +4,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
   return render_template('index.html')
+  
+@app.route('/about/')
+def about():
+  return render_template('about.html')
 
 @app.route('/recipes/')
 def recipes():
@@ -21,8 +25,22 @@ def bonfire():
 def christmas():
   return render_template('christmas.html')
   
-
-
+@app.route('/recipes/10_mins/')
+def ten_mins():
+  return render_template('10_mins.html')
+  
+@app.route('/recipes/10_20mins/')
+def ten_twenty_mins():
+  return render_template('10_20mins.html')
+  
+@app.route('/recipes/20_30mins/')
+def twenty_thirthy_mins():
+  return render_template('20_30mins.html')
+  
+@app.route('/recipes/30_40mins/')
+def thirty_fourty_mins():
+  return render_template('30_40mins.html')
+  
 @app.route('/recipes/halloween/cobweb_cake/')
 def cobweb_cake():
   return render_template('cobweb_cake.html')
@@ -33,11 +51,7 @@ def rocky_road():
   
 @app.route('/recipes/halloween/pumpkin_pie/')
 def pumpkin_pie():
-	with open("test.json") as pumpkinpie:
-		json.load(pumpkinpie
-		)
-  	return render_template('pumpkin_pie2.html')
+  return render_template('pumpkin_pie.html')
   
 if __name__ == ("__main__"):
   app.run(host='0.0.0.0', debug=True)
-
