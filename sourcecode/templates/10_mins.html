@@ -1,0 +1,51 @@
+{% extends "recipes_temp.html" %}
+
+{% block title %}
+
+Recipes Less Than 10 minutes
+
+{% endblock %}
+
+{% block img_content %}
+
+<div class="img_cont bg_img13">
+	<h1 class="banner">Cooking Time Less Than 10 minutes</h1>
+</div>
+	
+{% endblock %}}
+
+{% block body_content %}
+
+<h3>All Recipes Less than 10 Minutes</h3>
+
+<div class="container_fluid" "row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/rocky_road.png') }}" alt="Rocky Road">
+      <div class="caption">
+        <h3>Rocky Road Crunch Bars</h3>
+		<p>Serves: 24</p>
+		<p>Cooking Time: less than 10 mins</p>
+        <p><a href="http://localhost:5000/recipes/10_mins/rocky_road" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/gingerbread_baubles.png') }}" alt=" Gingerbread Baubles">
+      <div class="caption">
+        <h3>Gingerbread Baubles</h3>
+		<p>Serves: 15</p>
+		<p>Cooking Time: 8 to 10 mins</p>
+        <p><a href="http://localhost:5000/recipes/10_mins/gingerbread_baubles" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}}
+
+
