@@ -1,0 +1,65 @@
+{% extends "recipes_temp.html" %}
+
+{% block title %}
+
+Christmas
+
+{% endblock %}
+
+{% block img_content %}
+  
+<div class="img_cont bg_img3">
+	<h1 class="banner">Christmas Recipes</h1>
+</div>
+	
+{% endblock %}}
+
+{% block body_content %}
+
+<h3>All Christmas Recipies</h3>
+
+<div class="container_fluid" "row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/christmas_wreath.png') }}" alt=" Christmas Wreath">
+      <div class="caption">
+        <h3>Christmas Wreath Biscuits</h3>
+		<p>Serves: 18</p>
+		<p>Cooking Time: 12 - 15 minutes</p>
+        <p><a href="http://localhost:5000/recipes/christmas/christmas_wreaths" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/gingerbread_baubles.png') }}" alt=" Gingerbread Baubles">
+      <div class="caption">
+        <h3>Gingerbread Baubles</h3>
+		<p>Serves: 15</p>
+		<p>Cooking Time: 8 - 10 minutes</p>
+        <p><a href="http://localhost:5000/recipes/christmas/gingerbread_baubles" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/mince_pies.png') }}" alt=" Mince Pies">
+      <div class="caption">
+        <h3>Easy Mince Pies</h3>
+		<p>Serves: 18</p>
+		<p>Cooking Time: 12 - 15 minutes</p>
+        <p><a href="http://localhost:5000/recipes/christmas/mince_pies" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}}
+
+
