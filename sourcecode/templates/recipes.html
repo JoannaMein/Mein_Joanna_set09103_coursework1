@@ -1,0 +1,136 @@
+{% extends "recipes_temp.html" %}
+
+{% block title %}
+
+Recipes
+
+{% endblock %}
+
+{% block img_content %}
+
+<div class="img_cont bg_img">
+	<h1 class="banner">Baking Recipes</h1>
+	<h2 class="banner">Here you can find recipes depending on occasion or baking time</h2>
+</div>
+	
+{% endblock %}}
+
+{% block body_content %}
+
+<h3>All Recipes</h3>
+
+<div class="container_fluid" "row" "equal">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/pumpkin_pie.png') }}" alt="Pumpkin Pie">
+      <div class="caption">
+        <h3>Pumpkin Pie</h3>
+        <p>Serves: 8</p>
+		<p>Cooking Time: 35 - 40 minutes</p>
+        <p><a href="http://localhost:5000/recipes/pumpkin_pie" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row" "equal">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/cobweb_cake.png') }}" alt="Cobweb Cake">
+      <div class="caption">
+        <h3>Marshmallow Cobweb Cake</h3>
+        <p>Serves: 10</p>
+		<p>Cooking Time: 25 - 30 minutes</p>
+        <p><a href="http://localhost:5000/recipes/cobweb_cake" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row" "equal">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/rocky_road.png') }}" alt="Rocky Road">
+      <div class="caption">
+        <h3>Rocky Road Crunch Bars</h3>
+		<p>Serves: 24</p>
+		<p>Cooking Time: Less than 10 mins</p>
+        <p><a href="http://localhost:5000/recipes/rocky_road" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row" "equal">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/peanut_squares.png') }}" alt="Peanut Squares">
+      <div class="caption">
+        <h3>Peanut Butter Squares</h3>
+		<p>Serves: 16</p>
+		<p>Cooking Time: 25 - 30 minutes</p>
+        <p><a href="http://localhost:5000/recipes/peanut_squares" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row" "equal">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/toffee_muffins.png') }}" alt=" Toffee Muffins">
+      <div class="caption">
+        <h3>Toffee Apple Muffins</h3>
+		<p>Serves: 12</p>
+		<p>Cooking Time: 30 - 35 minutes</p>
+        <p><a href="http://localhost:5000/recipes/toffee_muffins" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row" "equal">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/christmas_wreath.png') }}" alt=" Christmas Wreath">
+      <div class="caption">
+        <h3>Christmas Wreath Biscuits</h3>
+		<p>Serves: 18</p>
+		<p>Cooking Time: 12 - 15 minutes</p>
+        <p><a href="http://localhost:5000/recipes/christmas_wreaths" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row" "equal">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/gingerbread_baubles.png') }}" alt=" Gingerbread Baubles">
+      <div class="caption">
+        <h3>Gingerbread Baubles</h3>
+		<p>Serves: 15</p>
+		<p>Cooking Time: 8 - 10 minutes</p>
+        <p><a href="http://localhost:5000/recipes/gingerbread_baubles" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container_fluid" "row" "equal">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ url_for('static', filename = 'imgs/mince_pies.png') }}" alt=" Mince Pies">
+      <div class="caption">
+        <h3>Easy Mince Pies</h3>
+		<p>Serves: 18</p>
+		<p>Cooking Time: 12 - 15 minutes</p>
+        <p><a href="http://localhost:5000/recipes/mince_pies" class="btn btn-primary" role="button">See Recipe</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}}
+
+
