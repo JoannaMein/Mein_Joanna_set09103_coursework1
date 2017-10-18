@@ -13,6 +13,15 @@
 	
 /* ----------- */
 
+/* About Page */
+
+.about_container{
+	margin-top: 5%;
+	font-size: 14px;
+}
+
+/* ----------- */
+
 /* Page Banners */
 
 .img_cont{
@@ -43,6 +52,54 @@
 	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/pumpkin_pie.png);
 }
 
+.bg_img5{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/cobweb_cake.png);
+}
+
+.bg_img6{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/rocky_road.png);
+}
+
+.bg_img7{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/peanut_squares.png);
+}
+
+.bg_img8{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/toffee_muffins.png);
+}
+
+.bg_img9{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/christmas_wreath.png);
+}
+
+.bg_img10{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/gingerbread_baubles.png);
+}
+
+.bg_img11{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/mince_pies.png);
+}
+
+.bg_img12{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/biscuits.png);
+}
+
+.bg_img13{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/small_cakes.png);
+}
+
+.bg_img14{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/cupcakes.png);
+}
+
+.bg_img15{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/cookies.png);
+}
+
+.bg_img16{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/cake.png);
+}
+
 h1.banner, h2.banner, p.lead {
 	text-align: center;
 	color: #FFFFFF;
@@ -57,19 +114,5 @@ h2.banner {
 }
 	
 /* ----------- */
-
-/* Individual Recipe Pages  */
-
-pre{
-	white-space: pre-wrap; 
-	word-break: normal;
-	background-color: #ffffff;
-	border: none;
-	font-family: inherit;
-	font-size: inherit;
-}
-
-/* ----------- */
-
 
 
