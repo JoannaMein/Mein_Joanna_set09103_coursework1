@@ -9,8 +9,8 @@ Marshmallow Cobweb Cake
 {% block img_content %}
   
 <div class="img_cont bg_img5">
-	<h1 class="banner">Cobweb Cake</h1>
-	<p class="lead banner">Cooking Time - </p>
+	<h1 class="banner">{{ cobweb.name }}</h1>
+	<p class="lead banner">Cooking Time - {{ cobweb.cooking }}</p>
 </div>
 	
 {% endblock %}}
@@ -20,9 +20,19 @@ Marshmallow Cobweb Cake
   <div class="recipe_container">
 	<div class="ingredients">
 		<h3>Ingredients</h3>
+		<ul>
+        	{% for ingredient in cobweb.ingredients %}
+            	<li>{{ ingredient }}</li>
+        	{% endfor %}
+    	</ul>
 	</div>
 	<div class="method">
 		<h3>Method</h3>
+		<ul>
+			{% for methods in cobweb.methods %}
+            	<li>{{ methods }}</li>
+        	{% endfor %}
+		</ul>
 	</div>
   </div>
   
