@@ -78,8 +78,20 @@ def cobweb_cake():
 @app.route('/recipes/rocky_road/')
 @app.route('/recipes/halloween/rocky_road/')
 @app.route('/recipes/bonfire/rocky_road/')
-def rocky_road():
-  return render_template('rocky_road.html')
+@app.route('/recipes/10_mins/rocky_road')
+def rocky():
+  recipes = []
+  with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+  p = {}
+  for item in recipes:
+     if item['name'] == "Rocky Road Crunch Bars":
+       print item
+       p = item
+
+  return render_template('rocky_road.html', rocky=p)
   
 if __name__ == ("__main__"):
   app.run(host='0.0.0.0', debug=True)
