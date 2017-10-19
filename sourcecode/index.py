@@ -60,8 +60,20 @@ def pumpkin_pie():
   
 @app.route('/recipes/cobweb_cake/')
 @app.route('/recipes/halloween/cobweb_cake/')
+@app.route('/recipes/20_30mins/cobweb_cake/')
 def cobweb_cake():
-  return render_template('cobweb_cake.html')
+  recipes = []
+  with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+  p = {}
+  for item in recipes:
+     if item['name'] == "Marshmallow Cobweb Cake":
+       print item
+       p = item
+
+  return render_template('cobweb_cake.html', cobweb=p)
 
 @app.route('/recipes/rocky_road/')
 @app.route('/recipes/halloween/rocky_road/')
