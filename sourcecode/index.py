@@ -41,10 +41,22 @@ def twenty_thirthy_mins():
 def thirty_fourty_mins():
   return render_template('30_40mins.html')
   
+@app.route('/recipes/pumpkin_pie/')
 @app.route('/recipes/halloween/pumpkin_pie/')
-@app.route('/recipes/halloween/pumpkin_pie/')
+@app.route('/recipes/30_40mins/pumpkin_pie/')
 def pumpkin_pie():
-  return render_template('pumpkin_pie.html')
+  recipes = []
+  with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+  p = {}
+  for item in recipes:
+     if item['name'] == "Pumpkin Pie":
+       print item
+       p = item
+
+  return render_template('pumpkin_pie.html', pumpkin=p)
   
 @app.route('/recipes/cobweb_cake/')
 @app.route('/recipes/halloween/cobweb_cake/')
