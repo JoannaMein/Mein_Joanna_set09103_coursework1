@@ -20,9 +20,20 @@ Toffee Apple Muffins
   <div class="recipe_container">
 	<div class="ingredients">
 		<h3>Ingredients</h3>
+		<ul>
+        	{% for ingredient in toffee.ingredients %}
+            	<li>{{ ingredient }}</li>
+        	{% endfor %}
+    	</ul>
 	</div>
 	<div class="method">
 		<h3>Method</h3>
+		<ul>
+        	{% for methods in toffee.methods %}
+            	<li>{{ methods }}</li>
+        	{% endfor %}
+    	</ul>
 	</div>
   </div>
+  
 {% endblock %}}
