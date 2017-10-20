@@ -127,5 +127,56 @@ def toffee_muffins():
 
   return render_template('toffee_muffins.html', toffee=p)
   
+@app.route('/recipes/christmas_wreaths/')
+@app.route('/recipes/christmas/christmas_wreaths/')
+@app.route('/recipes/10_20mins/christmas_wreaths/')
+def christmas_wreaths():
+  recipes = []
+  with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+  p = {}
+  for item in recipes:
+     if item['name'] == "Christmas Wreath Biscuits":
+       print item
+       p = item
+
+  return render_template('christmas_wreaths.html', wreaths=p)
+
+@app.route('/recipes/gingerbread_baubles/')
+@app.route('/recipes/christmas/gingerbread_baubles/')
+@app.route('/recipes/10_mins/gingerbread_baubles')
+def gingerbread_baubles():
+  recipes = []
+  with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+  p = {}
+  for item in recipes:
+     if item['name'] == "Gingerbread Baubles":
+       print item
+       p = item
+
+  return render_template('gingerbread_baubles.html', baubles=p)
+  
+@app.route('/recipes/mince_pies/')
+@app.route('/recipes/christmas/mince_pies/')
+@app.route('/recipes/10_20mins/mince_pies/')
+def mince_pies():
+  recipes = []
+  with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+  p = {}
+  for item in recipes:
+     if item['name'] == "Easy Mince Pies":
+       print item
+       p = item
+
+  return render_template('mince_pies.html', mince=p)
+  
 if __name__ == ("__main__"):
   app.run(host='0.0.0.0', debug=True)
