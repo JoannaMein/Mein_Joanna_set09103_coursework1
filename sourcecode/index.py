@@ -93,5 +93,39 @@ def rocky():
 
   return render_template('rocky_road.html', rocky=p)
   
+@app.route('/recipes/peanut_squares/')
+@app.route('/recipes/bonfire/peanut_squares/')
+@app.route('/recipes/20_30mins/peanut_squares/')
+def peanut_squares():
+  recipes = []
+  with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+  p = {}
+  for item in recipes:
+     if item['name'] == "Peanut Butter Squares":
+       print item
+       p = item
+
+  return render_template('peanut_squares.html', peanut=p)
+  
+@app.route('/recipes/toffee_muffins/')
+@app.route('/recipes/bonfire/toffee_muffins/')
+@app.route('/recipes/30_40mins/toffee_muffins/')
+def toffee_muffins():
+  recipes = []
+  with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+  p = {}
+  for item in recipes:
+     if item['name'] == "Toffee Apple Muffins":
+       print item
+       p = item
+
+  return render_template('toffee_muffins.html', toffee=p)
+  
 if __name__ == ("__main__"):
   app.run(host='0.0.0.0', debug=True)
