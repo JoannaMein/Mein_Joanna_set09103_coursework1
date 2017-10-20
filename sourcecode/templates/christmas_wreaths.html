@@ -20,9 +20,20 @@ Christmas Wreath Biscuits
   <div class="recipe_container">
 	<div class="ingredients">
 		<h3>Ingredients</h3>
+		<ul>
+        	{% for ingredient in wreaths.ingredients %}
+            	<li>{{ ingredient }}</li>
+        	{% endfor %}
+    	</ul>
 	</div>
 	<div class="method">
 		<h3>Method</h3>
+		<ul>
+        		{% for methods in wreaths.methods %}
+            	<li>{{ methods }}</li>
+        	{% endfor %}
+    	</ul>
 	</div>
   </div>
+  
 {% endblock %}}
