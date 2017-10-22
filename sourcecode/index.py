@@ -25,7 +25,7 @@ def bonfire():
 @app.route('/recipes/christmas/')
 def christmas():
   return render_template('christmas.html')
-  
+
 @app.route('/recipes/10_mins/')
 def ten_mins():
   return render_template('10_mins.html')
@@ -75,7 +75,7 @@ def cobweb_cake():
        p = item
 
   return render_template('cobweb_cake.html', cobweb=p)
-
+	
 @app.route('/recipes/rocky_road/')
 @app.route('/recipes/halloween/rocky_road/')
 @app.route('/recipes/bonfire/rocky_road/')
@@ -179,5 +179,10 @@ def mince_pies():
 
   return render_template('mince_pies.html', mince=p)
   
+@app.errorhandler(404)
+def page_not_found(error):
+	return render_template('404.html'), 404
+
 if __name__ == ("__main__"):
   app.run(host='0.0.0.0', debug=True)
+
