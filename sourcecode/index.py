@@ -41,17 +41,24 @@ def twenty_thirthy_mins():
 def thirty_fourty_mins():
   return render_template('30_40mins.html')
   
+@app.route('/recipes/halloween/pumpkin_pie/')
+@app.route('/recipes/halloween/pumpkin_pie/')
+@app.route('/recipes/30_40mins/pumpkin_pie/')
+def pumpkin_pie():
+  return render_template('pumpkin_pie.html')
+  
+@app.route('/recipes/cobweb_cake/')
 @app.route('/recipes/halloween/cobweb_cake/')
+@app.route('/recipes/20_30mins/cobweb_cake/')
 def cobweb_cake():
   return render_template('cobweb_cake.html')
 
+@app.route('/recipes/rocky_road/')
 @app.route('/recipes/halloween/rocky_road/')
+@app.route('/recipes/bonfire/rocky_road/')
+@app.route('/recipes/10_mins/rocky_road')
 def rocky_road():
   return render_template('rocky_road.html')
-  
-@app.route('/recipes/halloween/pumpkin_pie/')
-def pumpkin_pie():
-  return render_template('pumpkin_pie.html')
   
 if __name__ == ("__main__"):
   app.run(host='0.0.0.0', debug=True)
