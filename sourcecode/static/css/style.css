@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-html, body{
+body, html{
   	height: 100%;
   	margin: 0;
 }
@@ -55,7 +55,6 @@ html, body{
 
 .img_container{
 	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/home_banner.png);
-	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -161,7 +160,8 @@ h1.banner, h2.banner, p.lead{
 }
 	
 h1.banner{
-	padding-top: 10%;
+	margin-top: 0%;
+    padding-top: 20%;
 }
 	
 h2.banner{
