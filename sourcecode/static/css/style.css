@@ -100,6 +100,10 @@
 	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/cake.png);
 }
 
+.bg_img17{
+	background-image:linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../imgs/404.png);
+}
+
 h1.banner, h2.banner, p.lead {
 	text-align: center;
 	color: #FFFFFF;
