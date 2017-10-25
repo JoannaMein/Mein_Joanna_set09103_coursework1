@@ -9,6 +9,7 @@
 
 </head>
 <body>
+<!-- Navigation Starts -->
 <nav class="navbar navbar-inverse navbar-fixed-top">
 	<div class="container">
     	<div class="navbar-header">
@@ -23,11 +24,15 @@
     	</div>
   	</div>
 </nav>
+<!-- Navigation Ends -->
 
+<!-- Banner Image Begins -->
 <div class="img_cont"> 
 	{% block img_content %} {% endblock %} 
 </div>
+<!-- Banner Image Ends -->
 
+<!-- Side Navigation Begins -->
 <div class="container-fluid">
 	<div class="container-fluid" class="row">
   	<div class="col-md-2 sidebar">
@@ -51,20 +56,26 @@
       		</li>
     	</ul>
   	</div>
+  	<!-- Side Navigation Ends -->
+  	
+  	<!-- Main Content Begins -->
   	<div class='col-md-10 main'> 
   		{% block body_content %} {% endblock %} 
   	</div>
   	</div>
   	<div class="push">
   	</div>
+  	<!-- Main Content Ends -->
 </div>
 
+<!-- Footer Begins -->
 <footer>
 	<div class="container">
 		<p>Set09103 Coursework1 - Recipe Catalouge</p>
 		<p>Joanna Mein</p>
 	</div>
 </footer>
+<!-- Footer Ends -->
 
 <script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script> 
 <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
