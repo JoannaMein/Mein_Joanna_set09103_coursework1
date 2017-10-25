@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Baking Recipe Catalogue</title>
+<title>{% block title %}{% endblock %} | Baking Recipes</title>
 <meta charset="utf-8">
 <meta name="description" content="Baking Recipe Catalogue">
 <meta name="author" content="Joanna Mein">
@@ -12,12 +12,13 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="navbar"> <span class="sr-only">Toggle navigation</span> </button>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar"> <span class="navbar"> <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span> <span class="sr-only">Toggle navigation</span> 
+      </button>
       <a class="navbar-brand" href="http://localhost:5000/">Baking Recipes</a> </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+       	<li><a href="http://localhost:5000/about">About</a></li>
         <li><a href="http://localhost:5000/recipes">Recipes</a></li>
-        <li><a href="http://localhost:5000/add_recipe">Add Recipe</a></li>
       </ul>
     </div>
   </div>
@@ -29,7 +30,7 @@
 
 {% block body_content %} {% endblock %}
  
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script> 
+<script src="{{ url_for('static', filename='js/jquery-3.2.1.min.js')}}"></script> 
 <script src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
 </body>
 </html>
