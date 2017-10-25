@@ -1,0 +1,211 @@
+% #######################################
+% ########### FILL THESE IN #############
+% #######################################
+\def\mytitle{Baking Recipes - Coursework Report}
+\def\mykeywords{Python, Flask, Bootstrap, JSON, Recipes, Recipe Catalogue, Baking, Catalogue, Occasion, Cooking Time}
+\def\myauthor{Joanna Mein}
+\def\contact{40316854@live.napier.ac.uk}
+\def\mymodule{Advanced Web Technologies (SET09103)}
+% #######################################
+% #### YOU DON'T NEED TO TOUCH BELOW ####
+% #######################################
+\documentclass[10pt, a4paper]{article}
+\usepackage[a4paper,outer=1.5cm,inner=1.5cm,top=1.75cm,bottom=1.5cm]{geometry}
+\twocolumn
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+%colour our links, remove weird boxes
+\usepackage[colorlinks,linkcolor={black},citecolor={blue!80!black},urlcolor={blue!80!black}]{hyperref}
+%Stop indentation on new paragraphs
+\usepackage[parfill]{parskip}
+%% Arial-like font
+\usepackage{lmodern}
+\renewcommand*\familydefault{\sfdefault}
+%Napier logo top right
+\usepackage{watermark}
+%Lorem Ipusm dolor please don't leave any in you final report ;)
+\usepackage{lipsum}
+\usepackage{xcolor}
+\usepackage{listings}
+%give us the Capital H that we all know and love
+\usepackage{float}
+%tone down the line spacing after section titles
+\usepackage{titlesec}
+%Cool maths printing
+\usepackage{amsmath}
+%PseudoCode
+\usepackage{algorithm2e}
+
+\titlespacing{\subsection}{0pt}{\parskip}{-3pt}
+\titlespacing{\subsubsection}{0pt}{\parskip}{-\parskip}
+\titlespacing{\paragraph}{0pt}{\parskip}{\parskip}
+\newcommand{\figuremacro}[5]{
+    \begin{figure}[#1]
+        \centering
+        \includegraphics[width=#5\columnwidth]{#2}
+        \caption[#3]{\textbf{#3}#4}
+        \label{fig:#2}
+    \end{figure}
+}
+
+\lstset{
+	escapeinside={/*@}{@*/}, language=C++,
+	basicstyle=\fontsize{8.5}{12}\selectfont,
+	numbers=left,numbersep=2pt,xleftmargin=2pt,frame=tb,
+    columns=fullflexible,showstringspaces=false,tabsize=4,
+    keepspaces=true,showtabs=false,showspaces=false,
+    backgroundcolor=\color{white}, morekeywords={inline,public,
+    class,private,protected,struct},captionpos=t,lineskip=-0.4em,
+	aboveskip=10pt, extendedchars=true, breaklines=true,
+	prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+	keywordstyle=\color[rgb]{0,0,1},
+	commentstyle=\color[rgb]{0.133,0.545,0.133},
+	stringstyle=\color[rgb]{0.627,0.126,0.941}
+}
+
+\thiswatermark{\centering \put(336.5,-38.0){\includegraphics[scale=0.8]{logo}} }
+\title{\mytitle}
+\author{\myauthor\hspace{1em}\\\contact\\Edinburgh Napier University\hspace{0.5em}-\hspace{0.5em}\mymodule}
+\date{}
+\hypersetup{pdfauthor=\myauthor,pdftitle=\mytitle,pdfkeywords=\mykeywords}
+\sloppy
+% #######################################
+% ########### START FROM HERE ###########
+% #######################################
+\begin{document}
+	\maketitle
+	\begin{abstract}
+	 The aim of the coursework was to develop a web application for an online catalogue using Python Flask. This report covers the design of the web-app including URL hierarchy, enhancements, critical evaluation and personal evaluation. 
+	\end{abstract}
+    
+	\textbf{Keywords -- }{\mykeywords}
+
+	\section{Introduction}
+    Baking Recipes is a python flask web-app run in the browser that allows users to browse recipes. If they want something a bit more specific they can view recipes based on the occasion or the cooking time. If users are looking for recipes based on occasion they can choose from three categories: \begin{itemize}
+	    \item Halloween
+	    \item Bonfire Night
+	    \item Christmas
+	    \end{itemize}
+	If users are interested in finding recipes based on the cooking time they can choose from four categories:\begin{itemize}
+        \item Less than 10 minutes
+ 	    \item 10-20 minutes
+ 		\item 20-30 minutes
+ 		\item 30-40 minutes
+ 		\end{itemize}
+	
+	\section{Design}
+	\subsection{Languages}
+	This web-app has been built using Python Flask with the use of HTML templates, CSS, JavaScript and Json. The main running of the web-app is done using Python Flask through Levinux, Terminal or similar command line software.
+	
+	\subsubsection{Python Flask}
+	The structure and running of the web-app has been developed in Python Flask using Terminal on Mac, it can also be run using Levinux and other command line software. Flask is the framework which allow websites to be built in python and run in any web browser. Using Python Flask lets developers create web-apps without the need to write lines and lines of code. Features can normally be executed in just a few lines of code.
+
+    \subsubsection{Jinga2 HTML Templates}
+    The Layout and structure of the app has been created using jinga2 HTML templates which are rendered in the index.py file. For example, the Halloween page of this web-app is rendered as below using one simple line of code: 
+    \begin{lstlisting}[caption = Render Template Example]
+    @app.route('/recipes/halloween/')
+    def halloween():
+        return render_template('halloween.html')
+    \end{lstlisting}
+    
+    \subsubsection{JSON}
+    JSON has been used to import recipes from a json file in to the relevant pages of the web-app. Json was chosen to hold all the data instead of a text file because it only needs one file which can hold all the recipes required for the web-app, whereas there would need to be multiple text files. Json is called in the index.py file as below:
+    \begin{lstlisting}[caption = JSON in index.py File]
+    recipes = []
+    with open('recipes.json', 'r') as f:
+     recipes = json.load(f)
+     f.close()
+
+    p = {}
+    for item in recipes:
+     if item['name'] == "Rocky Road Crunch Bars":
+       print item
+       p = item
+    \end{lstlisting}
+    
+    An example of the JSON file which stores all the data about each individual recipe is as below:
+    \begin{lstlisting}[caption = JSON File Storing Recipe Data]
+    [{
+	    "name": "Rocky Road Crunch Bars",
+	    "cooking": "less than 10 mins",
+	    "ingredients": ["125g/4.5oz soft unsalted butter",
+		"300g/10.5oz best-quality dark chocolate, broken into pieces"
+	],
+	    "methods": [
+		"Heat the butter, chocolate and golden syrup in a heavy-based saucepan over a gentle heat. Remove from the heat, scoop out about 125ml/4.5fl oz of the melted mixture and set aside in a bowl.",
+		"Place the biscuits into a plastic freezer bag and crush them with a rolling pin until some have turned to crumbs but there are still pieces of biscuit remaining.",
+		"Fold the biscuit pieces and crumbs into the melted chocolate mixture in the saucepan, then add the marshmallows."
+	 }]
+    \end{lstlisting}
+    
+    The last step of implementing The JSON is to called it in the HTML template so that the recipes can be displayed on the correct web page.
+    \begin{lstlisting}[caption = JSON in HTML Template]
+    <ul>
+        {% for ingredient in rocky.ingredients %}
+            <li>{{ ingredient }}</li>
+        {% endfor %}
+    </ul>
+    \end{lstlisting}
+
+	\subsection{URL Hierarchy}
+	The design of the URL hierarchy has been developed with the users in mind so that they can easily navigate their way around the web-app. Users can move around using the Navigation bar which is located at the top of the screen and also the side navigation for more specific navigation. The page the user is on is reflected in the URL. For example, if the user is on the recipes page then the URL is ''http://localhost:5000/recipes/''. This makes it clear that the user is on the recipes page. Below is an example of how the URL is set in Python.
+	\begin{lstlisting}[caption = Recipes URL Hierarchy in Python Flask]
+    @app.route('/recipes/')
+    def recipes():
+        return render_template('recipes.html')
+    \end{lstlisting}
+	The hierarchy of the web-app is as below:  
+	\figuremacro{h}{url_hierarchy}{URL Hierarchy}{ - Baking Recipes Web-app }{1.0}
+	
+	\subsection{Styling}
+    \subsubsection{Bootstrap}
+    To style each page of the web-app Bootstrap has been used. Using this tool helps to makes the overall design consistent on every page. It also allows for easy layout design using the style sheet provided by Bootstrap. Custom styling has been implemented in this web-app to make it more appealing for the users. One of the other reasons Bootstrap has been used is because using the classes created it makes the pages responsive for all devices.
+
+    \vfill\null \columnbreak
+    \subsubsection{Imagery}
+    Throughout the web-app there are banner images on every page to make it more interesting and eye catching for the user. The images selected are all related to baking and on the individual recipe pages the banner image reflects what the recipe looks like. Images were taken from Unsplash\cite{Unsplash} and BBC Food\cite{bbc}.  
+ 
+	\subsubsection{Colour Scheme}
+    The colour scheme implemented was selected using Coolor \cite{Color}. This online tool generates a combination of five colours which are complementary to each other. Using tools like this means that designers and developers avoid having colours which do not complement each other. The colour scheme used in this particular web-app is green, red, white and grey. The specific colours which have been used are: \begin{itemize}
+        \item Green - \#1C5253
+        \item Red - \#F26A681
+        \item Grey - \#D9CED2
+        \item White - \#FFFFFF
+        \end{itemize}
+
+    \section{Enhancements}
+    \subsubsection{Add Recipes}
+    A feature which could be added to improve the web-app would be to allow users to add recipes. Having this feature would enable the users to add their own recipes to the site to share with others. Having this feature would also add an element of community between users. It would also provide an easy way to share the recipes easily with friends and family by uploading it to the site and sharing a link with those who want it. 
+    
+    \subsubsection{Contact Form}
+    Another feature which could improve the web-app would be to add a contact form so that users can get in touch if they have any issues or questions related to the web-app. This would be a valuable feature because if users were having difficulty finding recipes then they would be able to send a message with their question or query for someone to get back to them.  If the feature to add recipes was in place, then they could fill out the contact form with a question perhaps relating to how they add a recipe.
+    
+    \subsubsection{Search Bar}
+    Another feature which could be added is a search bar. Having this feature allows more user interaction because it would let the users search for recipes in a variety of different ways. For example, they could search using specific keywords, recipe names, ingredients, User, etc. The possibilities are endless what users could search for on the web-app.
+
+    \vfill\null \columnbreak
+    \section{Critical Evaluation}
+    The main feature of the web-app is the ability to using the side navigation, find recipes by occasion and cooking time. The developer  feels this feature works well because it is a simple navigation menu which has drop downs so that when the user selects occasion they can then choose from Halloween, Bonfire Night or Christmas to find the recipes they want to make. Although they feel this feature works well it could be made better by adding in a page which displays all the occasions and another page which displays all the cooking times. This feature would allow the user who selected Cooking Times in the side navigation to be taken to a page which has all the cooking times which have recipes available. 
+
+    The developer feels the individual recipe pages have a simple and clean look to them and the layout chosen makes it recognisable that they are recipe. One think that doesn't work so well is that users can only see what the recipes looks like from the banner image and on some pages you can't see the whole image. It might have been better to put an image next to the ingredients to show the full image of the recipe.
+    
+    
+    \section{Personal Evaluation}
+    When creating this web-app there were a few challenges to face. These included learning Python Flask, Bootstrap and importing data from a JSON file to the HTML templates. 
+
+    \subsubsection{Python Flask}
+    To get familiar with Python Flask I worked my way through the Workbook provided\cite{Wells} which gave examples of the skills and knowledge required in order to complete the coursework. I also used Learn Python the Hard Way\cite{Shaw} which provided examples of things you can do with flask to try out. I also used Code Academy\cite{Code} which provided interactive examples of the things which can be done with Flask. Using a combination of these three tools I feel I now have a better understanding of how Python Flask works and how to build a web-app using Flask.
+
+    \subsubsection{Bootstrap}
+    Before starting the development and design of this web-app I had never used Bootstrap so it was a tool which was completely new to me, although it was a tool which I was keen to learn. However, to get familiar with it I read through the documentation\cite{Bootstrap} provided on the bootstrap website which enabled me to learn what all the different classes do. It also provided examples of ways to style and layout web pages in a modern way. These examples gave me ideas of the sort of layout I wanted to use for my web-app to keep it clean and modern looking. 
+    
+    \subsubsection{JSON in Python Flask} 
+     JSON was something else which I had never use, so again it is another skill which I gained by completing the coursework. To help me learn how JSON works and the ways it can be used to bring data into an HTML page I looked at some of the documentation\cite{JSON} on the JSON website. This gave me some background information about what JSON is and what it can be used for. I then looked at examples python website which helped me to understand more about how JSON can be used with Python Flask. I also looked at examples\cite{JSON_Examples} of how to structure my JSON file. Once I had a better understanding of how it worked I used Stack Overflow\cite{StackOverflow} to look at examples of how others had implemented it into Flask and Jinga2 Templates to make it work for the information I was displaying.
+
+    \subsubsection{Overall Personal Reflection}
+    Overall I feel the developing of the web-app went well without too many challenges are problems. Although challenges were faced I was able to overcome them easily with the help from articles and website online. I also feel the skills and knowledge I have gained through this development of the web-app will help me later on in university and my career after university.
+
+    \bibliographystyle{ieeetr}
+    \bibliography{references}
+		
+\end{document}
